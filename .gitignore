@@ -1,3 +1,11 @@
+# User defined files -------------------------------------------
+
+# Crdentials
+api_key
+
+
+
+# System files -------------------------------------------
 # History files
 .Rhistory
 .Rapp.history
