@@ -12,6 +12,18 @@ rsquared <- function(){
   cat("function definition pending")
 }
 
-rsquared <- function(){
-  cat("function definition pending")
+cleandf <- function(df=NULL, source = NA, ...){
+  col_names <- c("Date", "Open", "High", "Low", "Close", "AdjClose", "Volume", "Dividend", "Ticker")
+  colnames(df) <- col_names
+  col_order <- c("Ticker", "Date", "Open", "High", "Low", "Close", "AdjClose", "Volume", "Dividend")
+  df <- df[, col_order]
+  df <- data.frame(df,
+                   "LastFetched" = Sys.Date(),
+                   "Source" = source,
+                   "LastSourceRefresh" = meta_lastrefresh,
+                   "SourceTimeZone" = meta_refreshtz,
+                   "Comments" = meta_comment
+                   )
+  # df <- data.frame(df, "Source" = source)
+  return(df)
 }
