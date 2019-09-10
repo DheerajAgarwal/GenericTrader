@@ -5,7 +5,9 @@ list.of.packages <- c("shiny",
                       "rusquant",
                       "plotly",
                       "curl",
-                      "rgdax")
+                      "rgdax",
+                      "dplyr",
+                      "httr")
 
 cat("Checking if all necessary packages are available..................\n")
 
